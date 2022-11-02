@@ -7,6 +7,7 @@ require('dotenv').config();
 const methodOverride=require('method-override');
 const {sequelize}=require('./models')
 const port=5000;
+const postRoutes=require('./routes/postRoutes');
 
 // connecting mongodb database 
 sequelize.authenticate()
@@ -28,3 +29,4 @@ app.use(helmet());
 app.use(methodOverride('_method'))
 
 
+app.use(postRoutes);

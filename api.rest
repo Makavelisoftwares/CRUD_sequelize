@@ -1,13 +1,10 @@
 ###
-POST http://localhost:5000/users
+POST http://localhost:5000/api/posts
 Content-Type: application/json
 
 {
-    "firstname":"said",
-    "lastname":"maulid",
-    "nationality":"kenyan",
-    "age":"20"
-
+    "title":"title one",
+    "body":"body one"
 }
 
 
