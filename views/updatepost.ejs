@@ -1,8 +1,8 @@
 <%- include('./partials/header') %> 
     <div class="container">
         <form action="/<%-post.uuid%>?_method=PUT" method="POST">
-            <input type="text" class="form-control my-2" name="title" value="<%-post.title%> " placeholder="title">
-            <input type="text" value="<%-post.body %> " class="form-control my-2" name="body" placeholder="body">
+            <input type="text" class="form-control my-2 fw-bold" name="title" value="<%-post.title%> " placeholder="title">
+            <input type="text" value="<%-post.body %> " class="form-control fw-bold my-2" name="body" placeholder="body">
             <button type="submit" class="btn btn-info">Update</button>
         </form>
     </div>
