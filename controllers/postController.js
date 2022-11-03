@@ -21,7 +21,7 @@ const create_Post=async(req,res)=>{
     }
 }
 // show a single post 
-get_singlePost=async(req,res)=>{
+const get_singlePost=async(req,res)=>{
     const uuid=req.params.uuid;
     try {
         const post=await posts.findOne({where:{uuid}})
@@ -30,13 +30,15 @@ get_singlePost=async(req,res)=>{
         res.status(400).json(error)
     }
 }
+
+
 // delete a single post
 const delete_Post=async(req,res)=>{
-    const id=req.params.id;
+    const uuid=req.params.uuid;
     try {
-        const post=await posts.findOne({where:{id}})
+        const post=await posts.findOne({where:{uuid}})
         await post.destroy()
-        res.status(200).json('deleted')
+        res.redirect('/');
     } catch (error) {
         res.status(400).json(error)
     }
