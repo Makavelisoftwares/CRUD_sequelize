@@ -10,6 +10,13 @@ const get_postsPage=async(req,res)=>{
     }
 
 }  
+
+// create get  
+const create_get=(req,res)=>{
+    res.render('create');
+
+}
+
 // create a single post
 const create_Post=async(req,res)=>{
     const {title,body}=req.body;
@@ -45,9 +52,38 @@ const delete_Post=async(req,res)=>{
 }
 // update a single post
 
+const update_get=async(req,res)=>{
+    const uuid=req.params.uuid;
+    try {
+        const post=await posts.findOne({where:{uuid}})
+        res.render('updatepost',{post})
+    } catch (error) {
+        res.status(400).json(error)
+    }
+}
+
+
+// update post single
+const post_update=async(req,res)=>{
+    const {body,title}=req.body;
+    const uuid=req.params.uuid;
+    try {
+        const post=await posts.findOne({uuid})
+        await post.update({body,title});
+        res.redirect('/');
+        
+    } catch (error) {
+        res.status(400).json(error);
+    }
+
+}
+
 module.exports={
     get_postsPage,
     create_Post,
     get_singlePost,
-    delete_Post
+    delete_Post,
+    update_get,
+    post_update,
+    create_get
 }

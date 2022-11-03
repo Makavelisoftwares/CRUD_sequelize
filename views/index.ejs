@@ -1,11 +1,14 @@
 <%-include('./partials/header') %> 
     <div class="container">
+        <a href="/create" >
+            <button class="btn btn-danger my-2">create post</button>
+        </a>
         <%if(posts.length>0){%>
             <%posts.forEach(post=>{%>
-                <div class="card shadow">
+                <div class="card my-2 p-2 shadow">
                     <h2><%-post.title%> </h2>
                     <p><%- post.body%> </p>
-                    <p><small><%- post.createdAt %> </small></p>
+                    <p>posted on: <small><%- post.createdAt.toLocaleDateString() %> </small></p>
                     <a href="/posts/<%-post.uuid%>">
                         <button class="btn btn-info">View</button>
                     </a>

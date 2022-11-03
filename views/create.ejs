@@ -1,0 +1,14 @@
+<%-include('./partials/header')  %> 
+    <div class="container">
+        <div class="my-2">
+            <a href="/">
+                <button class="btn btn-danger">Cancel form</button>
+            </a>
+        </div>
+        <form action="/posts" method="POST">
+            <input type="text" class="form-control my-2" name="title" placeholder="title">
+            <input type="text" class="form-control my-2" name="body" placeholder="body">
+            <button type="submit" class="btn btn-warning">Create</button>
+        </form>
+    </div>
+<%-include('./partials/footer')  %> 

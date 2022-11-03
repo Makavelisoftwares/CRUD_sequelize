@@ -3,8 +3,8 @@ POST http://localhost:5000/posts
 Content-Type: application/json
 
 {
-    "title":"title one",
-    "body":"body one"
+    "title":"title two",
+    "body":"body two"
 }
 
 
@@ -12,10 +12,10 @@ Content-Type: application/json
 GET http://localhost:5000/users
 
 ###
-PUT http://localhost:5000/2
+PUT http://localhost:5000/56b7d524-3887-4807-9b4a-5e5425039ae0
 Content-Type: application/json
 
 {
-    "age":"6",
-    "nationality":"ugandan"
+    "body":"body updated",
+    "title":"title two"
 }
